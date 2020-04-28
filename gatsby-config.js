@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
+        name: `playground-content`,
         path: `${__dirname}/content`,
       },
     },
