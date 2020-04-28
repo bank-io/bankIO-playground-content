@@ -1,0 +1,99 @@
+---
+templateKey: docs
+title: "Bank of Scotland Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "bos"
+psd2Role: "PIS"
+parameters:
+  paymentType: domestic
+menus:
+  bankofscotland: 
+    weight: 2
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiateOpenBankingPayment from 'components/PSD/step-ob-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepGetPaymentConsent from 'components/PSD/step-get-payment-consent';
+import StepGetPaymentConsentFundsConfirmation from 'components/PSD/step-get-payment-consent-funds-confirmation';
+import AuthoriseOpenBankingStep from 'components/PSD/step-ob-authorise';
+import StepSubmitOpenBankingPayment from 'components/PSD/step-ob-submit-payment';
+
+PSU Credentials
+===============
+
+Users registered with Open Banking can test their applications with mock accounts created for the following banks.
+
+Mock account and payment data matches the our current product range for:
+
+*   Retail
+*   Business
+*   Commercial
+
+The password for all mock accounts is **Password123**.
+
+|Brand|Retail|Commercial|Business|
+|--- |--- |--- |--- |
+|Lloyds Bank|llr001|llc001|llb001|
+|Halifax|har001|N/A|N/A|
+|Bank of Scotland|bar001|bac001|bab001|
+|MBNA|mbr001|N/A|N/A|
+
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiateOpenBankingPayment/>
+  </step>
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseOpenBankingStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+  ## Get payment consent
+
+  <StepGetPaymentConsent/>
+  </step>
+  <step>
+
+  ## Get payment consent funds confirmation
+
+  <StepGetPaymentConsentFundsConfirmation/>
+  </step>
+  <step>
+
+  ## Submit payment
+
+  <StepSubmitOpenBankingPayment/>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>

@@ -1,0 +1,76 @@
+---
+templateKey: docs
+title: "Nordea Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "nordea"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+  country: "FI"
+  businessEntityID: "personal"
+menus:
+  nordea: 
+    weight: 2
+---
+
+
+
+
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+import StepPaymentConfirmation from 'components/PSD/step-payment-confirmation';
+const requestOverride = {
+  debtorAccount: {
+    "iban": "FI7473834510057469","currency":"EUR"
+  }
+};
+
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  Now, we need to turn that access code into an access token, by having our server make a request to your token endpoint
+  </step>
+  <step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+  <step>
+
+  ## Payment confirmation
+
+  <StepPaymentConfirmation />
+  </step>
+

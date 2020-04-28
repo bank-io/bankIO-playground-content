@@ -1,0 +1,74 @@
+---
+templateKey: docs
+title: "Bankia Bank Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "bankia"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  bankia: 
+    weight: 2
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+const requestOverride = {
+  debtorAccount: {
+    "iban": "ES7520381001366000005858","currency":"EUR"
+  },
+  creditorAccount: {
+    "iban": "ES5720381001396035272034","currency":"EUR"
+  }
+};
+
+
+
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+

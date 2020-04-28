@@ -1,0 +1,93 @@
+---
+templateKey: docs
+title: "Erste Group Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "erste-group"
+psd2Role: "AIS"
+menus:
+  erste-group: 
+    weight: 1
+---
+
+
+import StepWallet from 'components/PSD/step-wallet';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepTransactions from 'components/PSD/step-transactions';
+import CreateWalletToken from 'components/PSD/create-wallet-token';
+import StepWalletAddBank from 'components/PSD/step-wallet-add-bank';
+
+## How is this working?
+### Behind the scenes
+bla bla bla
+
+### Exchange token flow
+bla bla bla
+
+
+<step>
+
+  ## Create wallet
+
+  <StepWallet/>
+</step>
+<step>
+
+  ## Authenticate service with client credentials
+
+  <CreateWalletToken/>
+</step>
+<step>
+
+  ## Add bank to wallet
+
+  <StepWalletAddBank/>
+</step>
+<step>
+
+  ## Authorise access to accounts
+
+  <AuthoriseStep/>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  Now, we need to turn that access code into an access token, by having our server make a request to your token endpoint
+</step>
+<step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepCreateAccountConsent />
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>

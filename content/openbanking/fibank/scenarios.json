@@ -1,0 +1,18 @@
+[
+  {
+    "Scenario": "sepa-credit-transfers",
+    "paymentId": "1234-wertiq-983"
+  },
+  {
+    "Scenario": "domestic-credit-transfers-bgn",
+    "paymentId": "1234-rtgsct-983"
+  },
+  {
+    "Scenario": "domestic-budget-transfers-bgn",
+    "paymentId": "1234-bgnbdg-983"
+  },
+  {
+    "Scenario": "cross-border-transfers",
+    "paymentId": "1234-cbdtra-983"
+  }
+ ]

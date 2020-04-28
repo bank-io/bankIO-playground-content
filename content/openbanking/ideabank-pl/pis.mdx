@@ -1,0 +1,72 @@
+---
+templateKey: docs
+title: "Idea Bank Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "ideabank-pl"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  ideabank-pl: 
+    weight: 2
+---
+
+
+
+import AuthorisationUrlStep from 'components/PSD/step-authorisation-url';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+
+
+
+  <step>
+
+  ## Authorisation url
+
+  <AuthorisationUrlStep/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment/>
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+</step>
+<step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+

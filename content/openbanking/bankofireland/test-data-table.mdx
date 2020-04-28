@@ -1,0 +1,85 @@
+---
+templateKey: MdxSnippet
+---
+
+Test Accounts - AISP
+
+|PSU ID  |Scheme Name                  |Identification        |Account Type/SubType|Currency|FIELD6|
+|--------|-----------------------------|----------------------|--------------------|--------|------|
+|24156233|UK.OBIE.IBAN                 |IE47BOFI90126312660908|CURRENTACCOUNT      |EUR     |      |
+|24156233|UK.OBIE.PAN                  |5462580000001130      |CREDITCARD          |EUR     |      |
+|14235412|UK.OBIE.SortCodeAccountNumber|90949240279869        |CURRENTACCOUNT      |GBP     |      |
+|14235412|UK.OBIE.PAN                  |5462609876543210      |CREDITCARD          |GBP     |      |
+|18070751|UK.OBIE.IBAN                 |GB46BOFI90949240279869|CURRENTACCOUNT      |GBP     |      |
+|34080157|UK.OBIE.IBAN                 |GB47BOFI90949236104777|SAVINGS             |GBP     |      |
+
+Notes:
+
+1. To test transactions API, create an account-access-consent with transaction dates ranging from 1st Jan, 2018 to 31st Dec, 2018
+2. PSU ID 24156233 (ROI) contains test data for accounts, balances and transactions APIs. You will receive an empty response for any other APIs
+3. PSU ID 14235412 (UK) contains test data for accounts, balances, transactions, standing orders, scheduled payments, product, beneficiaries & Statement APIs. You will receive an empty response for any other APIs
+4. To test 500 Internal Server error, use PSU ID 18070751. 500 Internal Server error will be returned for all APIs
+5. To test empty responses for any APIs, use PSU ID 34080157. This will return empty responses for all APIs except for accounts and balances APIs.
+
+Test Accounts - PISP
+
+Debtor Accounts
+
+|PSU ID  |Jurisdiction|Scheme Name                  |Identification        |Account Type/SubType|Currency|
+|--------|------------|-----------------------------|----------------------|--------------------|--------|
+|89941690|RoI         |UK.OBIE.IBAN                 |IE43BOFI90159797017815|SAVINGS             |EUR     |
+|10546298|UK          |UK.OBIE.SortCodeAccountNumber|90883965880313        |CURRENTACCOUNT      |GBP     |
+
+Suggested Creditor Accounts
+
+|Jurisdiction|Creditor Profile                                    |Beneficiary IBAN / Acc No|Currency|
+|------------|----------------------------------------------------|-------------------------|--------|
+|UK          |Creditor is a Bank of Ireland Customer              |90915076026056           |GBP     |
+|            |Creditor is not a Bank of Ireland Customer          |50324086483629           |        |
+|RoI         |Creditor is a Bank of Ireland Customer              |IE47BOFI90126312660908   |EUR     |
+|            |Creditor is Irish and not a Bank of Ireland Customer|IE29AIBK93115212345678   |        |
+|            |Creditor is not Irish and SEPA Reachable            |DE89370400440532013000   |        |
+
+Suggested Creditor Accounts for International Payment
+
+|Jurisdiction|Creditor Profile                           |Beneficiary IBAN / Acc No|Beneficiary BIC|Currency|
+|------------|-------------------------------------------|-------------------------|---------------|--------|
+|UK & RoI    |Creditor is customer with an American bank.|8648362983               |CITIUS33XXX    |USD     |
+
+Notes:
+
+To test SEPA scenarios (domestic payment API):
+	1. Use PSU ID 89941690 (ROI)
+	2. Select a beneficiary from the ROI list above
+	3. Use an amount between €0.01 & €99.99
+
+
+To test UK domestic scenarios (domestic payment API):
+	1. Use PSU ID 10546298 (UK)
+	2. Select a beneficiary from the UK list above
+	3. Use an amount between £0.01 & £99.99
+
+
+To test ROI domestic standing order scenarios (domestic SO payment API):
+	1. Use PSU ID 89941690 (ROI)
+	2. Select a beneficiary from the ROI list above
+	3. Use an amount between €0.01 & €99.99
+	4. Start day of 5
+	5. Frequency of weekly
+	6. BOI does not support standing orders with end date or limited number of payments.
+	7. BOI supports only one amount for first, recurring and last standing order.
+
+To test UK domestic standing order scenarios (domestic payment API):
+	1. Use PSU ID 10546298 (UK)
+	2. Select a beneficiary from the UK list above
+	3. Use an amount between £0.01 & £99.99
+	4. Start day of 3
+	5. Frequency of monthly
+	6. BOI does not support standing orders with end date or limited number of payments.
+
+To test international payments (international Payment API)
+	1. Use PSU ID 89941690 (ROI) or PSU ID 10546298 (UK)
+	2. Select a beneficiary from  above
+	3. Use an amount between $0.01 & $99.99
+
+Testing of PISP error scenarios is based on amounts. Please refer to '‘Sandbox mocking information – Error Scenarios’' section on BoI Developer portal for error scenarios, kindly re-use the above data

@@ -1,0 +1,48 @@
+---
+templateKey: docs
+title: "Virgin Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "virgin"
+psd2Role: "AIS"
+menus:
+  virgin: 
+    weight: 1
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepInitiateOpenBankingPayment from 'components/PSD/step-ob-initiate-payment';
+import StepAccount from 'components/PSD/step-account';
+import StepTransactions from 'components/PSD/step-transactions';
+
+[Test Data](https://developer-test.raiffeisen.ro/aisp_test_data) - AISP Test Data
+
+| PSU ID     | Password |
+|------------|----------|
+| 9999999999 | 9999     |
+
+
+| PSU ID     | Account Number | Currency | Comment                                                      |
+|------------|----------------|----------|--------------------------------------------------------------|
+| 9999999999 | n/a            | n/a      | No active payment accounts                                   |
+| 9999999998 | 9999999999     | RON      | Account with multiple transactions                           |
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiateOpenBankingPayment/>
+  </step>

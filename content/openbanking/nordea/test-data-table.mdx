@@ -1,0 +1,32 @@
+---
+templateKey: MdxSnippet
+---
+
+#### Test Case
+
+  
+Case 200
+
+*   55000001 - password 111111 - with Security Pass and 1 account
+*   55000002 - password 111111 - with SMS Code validation (code ABC123), 3 accounts and one card
+*   55000008 - password 111111 - with SMS Code validation (code ABC123) and 3 accounts
+*   55000014 - password 111111 - with Security Pass and no accounts
+*   55000016 - password 111111 - with Security Pass and no accounts
+*   55000020 - password 111111 - with Security Pass and no balance
+*   55000022 - password 111111 - with Security Pass and 1 account
+
+  
+Clients with security error
+
+*   55000004 - password 111111 - with SMS Code validation (code ABC123) and no authorization
+*   55000010 - password 111111 - with Security Pass KO
+*   55000011 - password 111111 - with SMS Code validation KO (code ABC123)
+*   55000012 - password 111111 - without security
+
+  
+Clients with http error
+
+*   55000018 - password 111111 - with Security Pass and http error 500 on /accounts
+*   55000021 - password 111111 - with Security Pass and http error 500 on /transactions
+*   55000024 - password 111111 - with Security Pass and http error 403
+

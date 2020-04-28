@@ -1,0 +1,124 @@
+---
+templateKey: docs
+title: "Komerční banka Czech Republic Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "kb"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  kb: 
+    weight: 2
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+import StepPaymentCancellation from 'components/PSD/step-payment-cancellation';
+import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
+import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
+import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
+import StepPaymentPutAuthorisation from 'components/PSD/step-payment-put-authorisation';
+import StepPaymentConfirmation from 'components/PSD/step-payment-confirmation';
+const requestOverride = {
+  instructionIdentification: 'NOTPROVIDED',
+  debtorName: 'Meno Priezvisko',
+  debtorAccount: {
+    iban: "CZ1101000900930763990217",
+    currency: 'CZK',
+  },
+  creditorName: 'Meno Priezvisko',
+  creditorAccount: {
+    iban: "CZ3203000000000001111132",
+    currency: 'CZK',
+  },
+  instructedAmount: {
+    currency: 'CZK',
+    amount: '10.00'
+  },
+  "requestedExecutionDate": "2018-09-25",
+  remittanceInformationStructured: {
+    reference: 'VS:123'
+  },
+  remittanceInformationStructuredArray: [
+    {
+    reference: 'VS:123'
+  },{
+    reference: 'SS:456'
+  },{
+    reference: 'KS:7777'
+  },
+  ]
+};
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## Update Authorisation Sub-Resource
+  Update an authorisation sub-resource and finish the authorisation process.
+
+  <StepPaymentPutAuthorisation/>
+  </step>
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+  <step>
+
+  ## Post Authorisation Sub-Resource
+  Create an authorisation sub-resource and start the authorisation process.
+
+  <StepPaymentPostAuthorisation/>
+  </step>
+  <step>
+
+  ## Payment cancellation
+
+  <StepPaymentCancellation/>
+  </step>

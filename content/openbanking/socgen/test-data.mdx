@@ -1,0 +1,20 @@
+---
+templateKey: MdxLayoutSimple
+---
+
+import SocieteGeneraleTestDataTable from './test-data-table.mdx';
+
+PSU Credentials
+===============
+
+A set of non-real users were created by default.  
+
+<SocieteGeneraleTestDataTable />
+
+### Notes
+
+*   The Sandbox has a dynamic behaviour (pagination, research criteria...) even if the Sandbox datas are static.
+*   Due to static datas, note that there is no historical limit on /transactions for the Sandbox.
+*   For Live API /transactions you can retrieve transactions up to 6 months ago, as on the regular retail banking website.
+*   For Cash account (CACC) by default and if available, the Instant Balance (XPCD BalanceStatus) is returned. If the Instant Balance is not available, the Accounting Balance (CLBD BalanceStatus) will be returned.
+*   For Cards (CARD) the balance is of type Other (OTHR BalanceStatus) for a delayed debit card.

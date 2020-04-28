@@ -1,0 +1,55 @@
+---
+templateKey: docs
+title: "Société Générale Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "socgen"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  socgen: 
+    weight: 2
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+
+## How is this working?
+### Behind the scenes
+bla bla bla
+
+### Exchange token flow
+bla bla bla
+
+
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment/>
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+

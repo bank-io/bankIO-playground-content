@@ -1,0 +1,75 @@
+---
+templateKey: docs
+title: "BCR Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "bcr"
+psd2Role: "PIS"
+menus:
+  bcr: 
+    weight: 2
+---
+
+
+
+import StepWallet from 'components/PSD/step-wallet';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import SignPaymentStep from 'components/PSD/step-sign-payment';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+
+## How is this working?
+### Behind the scenes
+bla bla bla
+
+### Exchange token flow
+bla bla bla
+
+
+<step>
+
+  ## Authorise consent
+
+  Choose use "PSU 1 ORG 1"
+
+  <AuthoriseStep/>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+</step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment/>
+  </step>
+<step>
+
+  ## Sign payment
+
+  In order to successfully sign a page the user needs to enter the OTP Token for SANDBOX: 111111
+
+  <SignPaymentStep/>
+</step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+

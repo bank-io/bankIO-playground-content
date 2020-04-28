@@ -1,0 +1,121 @@
+---
+templateKey: docs
+title: "UniCredit Bank AG (\"HypoVereinsbank\") Account Information Service (AIS) Embedded"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "unicredit-de"
+psd2Role: "AIS"
+parameters:
+  redirectPreferred: false
+  psuIDType: "HVB_ONLINEBANKING"
+  psuID: "bgdemo"
+  encryptedPassword: "bgpassword"
+  scaAuthenticationData: "123456"
+menus:
+  unicredit-de: 
+    weight: 1
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepTransactions from 'components/PSD/step-transactions';
+import AccountConsentStatus from 'components/PSD/step-account-consent-status';
+import StepBalances from 'components/PSD/step-balances';
+import StepGetAccountConsent from 'components/PSD/step-get-account-consent';
+import StepAccountConsentAuthorisations from 'components/PSD/step-account-consent-authorisations';
+import StepAccountConsentAuthorisation from 'components/PSD/step-account-consent-authorisation';
+import StepAccountConsentPostAuthorisation from 'components/PSD/step-account-consent-post-authorisation';
+import StepAccountConsentPutAuthorisation from 'components/PSD/step-account-consent-put-authorisation';
+const requestOverride = {
+  access: {
+    accounts: [
+      {
+        iban: "DE49700202700123456785",
+      },
+    ],
+    balances: [
+      {
+        iban: "DE49700202700123456785",
+      },
+    ],
+    transactions: [
+      {
+        iban: "DE49700202700123456785",
+      },
+    ],
+  },
+};
+
+
+  <step>
+
+  ## Create a consent
+
+  <StepCreateAccountConsent requestOverride={requestOverride}/>
+  </step>
+  <step>
+
+  ## Account consent post authorisation
+
+  <StepAccountConsentPostAuthorisation/>
+  </step>
+  <step>
+
+  ## Account consent authorisations
+
+  <StepAccountConsentAuthorisations/>
+  </step>
+  <step>
+
+  ## Account consent authorisation
+
+  <StepAccountConsentAuthorisation/>
+  </step>
+  <step>
+
+  ## Update Authorisation Sub-Resource
+  Update an authorisation sub-resource and finish the authorisation process.
+
+  <StepAccountConsentPutAuthorisation/>
+  </step>
+  <step>
+
+  ## Get account consent
+
+  <StepGetAccountConsent/>
+  </step>
+  <step>
+
+  ## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>

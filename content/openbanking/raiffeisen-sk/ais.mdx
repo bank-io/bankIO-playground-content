@@ -1,0 +1,66 @@
+---
+templateKey: docs
+title: "Raiffeisen Bank Slovakia Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "raiffeisen-sk"
+psd2Role: "AIS"
+menus:
+  raiffeisen-sk:
+    weight: 1
+---
+
+import AuthoriseStep from "components/PSD/step-authorise";
+import CreateToken from "components/PSD/create-token";
+import RefreshToken from "components/PSD/refresh-token";
+import StepAccounts from "components/PSD/step-accounts";
+import StepAccount from "components/PSD/step-account";
+import StepTransactions from "components/PSD/step-transactions";
+import StepGetAccountConsent from "components/PSD/step-get-account-consent";
+import AccountConsentStatus from "components/PSD/step-account-consent-status";
+import StepBalances from "components/PSD/step-balances";
+import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
+
+  <step>
+
+## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+## Get account transactions
+
+  <StepTransactions/>
+  </step>
+

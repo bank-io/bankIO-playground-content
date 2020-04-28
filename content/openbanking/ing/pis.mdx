@@ -1,0 +1,78 @@
+---
+templateKey: docs
+title: "ING Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "ing"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  ing: 
+    weight: 2
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+const request = { instructedAmount: { amount: "1", currency: "EUR" }, creditorAccount: { iban: "AT861921125678901234" }, creditorName: "Laura Musterfrau" }
+
+## How is this working?
+### Behind the scenes
+bla bla bla
+
+### Exchange token flow
+bla bla bla
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment/>
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+</step>
+<step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+

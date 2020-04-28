@@ -1,0 +1,12 @@
+[
+  {
+    "IBAN": "BG29BANK99990123456789",
+    "Currency": "BGN",
+    "consentId": "3dc3d5b3-7023-4848-9853-f5400a64e80f"
+  },
+  {
+    "IBAN": "BG76BANK99990234567891",
+    "Currency": "EUR",
+    "consentId": "3dc3d5b3-7023-4848-9853-c4511b46f08e"
+  }
+ ]

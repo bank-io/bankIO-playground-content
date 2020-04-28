@@ -1,0 +1,79 @@
+---
+templateKey: docs
+title: "Attica Bank Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "atticabank"
+psd2Role: "PIS"
+parameters:
+  paymentType: sepa-credit-transfers
+menus:
+  atticabank: 
+    weight: 2
+---
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
+import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
+import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
+const requestOverride = {
+  debtorAccount: {
+    "iban": "RO32BACX0000000515979310"
+  }
+};
+
+
+
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>
+  <step>
+
+  ## Payment authorisations
+
+  <StepPaymentAuthorisations/>
+  </step>
+  <step>
+
+  ## Payment authorisation
+
+  <StepPaymentAuthorisation/>
+  </step>
+  <step>
+
+  ## Post Authorisation Sub-Resource
+  Create an authorisation sub-resource and start the authorisation process.
+
+  <StepPaymentPostAuthorisation/>
+  </step>
+

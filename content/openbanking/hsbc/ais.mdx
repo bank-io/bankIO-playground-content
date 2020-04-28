@@ -1,0 +1,77 @@
+---
+templateKey: docs
+title: "HSBC Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "hsbc"
+psd2Role: "AIS"
+menus:
+  hsbc: 
+    weight: 1
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiateOpenBankingPayment from 'components/PSD/step-ob-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepGetPaymentConsent from 'components/PSD/step-get-payment-consent';
+import StepGetPaymentConsentFundsConfirmation from 'components/PSD/step-get-payment-consent-funds-confirmation';
+import AuthoriseOpenBankingStep from 'components/PSD/step-ob-authorise';
+import StepSubmitOpenBankingPayment from 'components/PSD/step-ob-submit-payment';
+import StepTransactions from 'components/PSD/step-transactions';
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepCreateAccountConsent />
+  </step>
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseOpenBankingStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>

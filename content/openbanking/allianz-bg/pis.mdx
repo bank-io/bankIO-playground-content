@@ -1,0 +1,82 @@
+---
+templateKey: docs
+title: "Allianz Bank Bulgaria Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "allianz-bg"
+psd2Role: "PIS"
+parameters:
+  psuID: "31125453913"
+  paymentType: sepa-credit-transfers
+menus:
+  allianz-bg: 
+    weight: 2
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import StepPaymentStatus from 'components/PSD/step-payment-status';
+import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
+import PaymentMockData from 'components/PSD/payment-mock-data';
+import allianzBGPISScenarios from './pisScenarios.json';
+const requestOverride = {
+  debtorAccount: {
+    "iban": "NO4412032202452"
+  },
+  creditorAgent: "COBADEFF",
+  creditorAddress: {
+      streetName: 'Fleet Street',
+      buildingNumber: '61A',
+      townName: 'London',
+      postCode: 'EC4Y1',
+      country: 'GB'
+    },
+};
+
+
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+  ## Test scenario
+
+  <PaymentMockData scenarios={allianzBGPISScenarios} />
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
+  </step>
+  <step>
+
+  ## Payment status
+
+  <StepPaymentStatus/>
+  </step>

@@ -1,0 +1,109 @@
+---
+templateKey: docs
+title: "Deutsche Bank Payment Service (PIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "deutsche-bank-dbapi"
+psd2Role: "PIS"
+menus:
+  deutsche-bank-dbapi: 
+    weight: 2
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import StepPayment from 'components/PSD/step-payment';
+import CreateOTP from 'components/PSD/create-otp';
+import PatchOTPResponse from 'components/PSD/patch-otp-response';
+
+## How is this working?
+### Behind the scenes
+bla bla bla
+
+### Exchange token flow
+bla bla bla
+
+<step>
+
+  ## Authorise consent
+
+  <div _ngcontent-c29 className="card-wrap" fxlayout="column" style={{flexDirection: 'column', boxSizing: 'border-box', display: 'flex'}}>
+  <div _ngcontent-c29 className="ng-tns-c29-877" fxlayout="row" fxlayoutalign="space-between center" style={{flexDirection: 'row', boxSizing: 'border-box', display: 'flex', maxHeight: '100%', placeContent: 'center space-between', alignItems: 'center'}}>
+    <div _ngcontent-c29 className="testdata-users cursor" fxflex={25} tabIndex={0} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '25%'}}>
+      <div _ngcontent-c29 className="user-avatar db-testuser-avatar-persona4" />
+    </div>
+    <div _ngcontent-c29 className="cursor" fxflex={50} tabIndex={0} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '50%'}}>
+      <h4 _ngcontent-c29 className="m-t-0 m-b-0">
+        
+         Claudia Klar </h4>
+    </div>
+    <div _ngcontent-c29 className="m-l-2" fxflex={25} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '25%'}}>
+      
+      <qrcode _ngcontent-c29 correction-level="'M'" image="true" size={75} type-number={8} className="ng-tns-c29-877 ng-star-inserted" title="otpauth://totp/gluesim:100100397300001?secret=DLTTLHXRBDQ5EPXI"><img alt="Scan me!" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAEWElEQVR4Xu2cYW/CMAxE4f//aCY6OoUQ5z2nncSG92Wa2obkcj6fnbLr5XK5XRZ+brfvx67X6/Y7+rsf2t6/37c/v48fTTW6P/q8hSVf7istsCRyP2DRzu3j9TtFzOmfi+bVM5MYZZlnmWwYW2ABq9pNeQGr37F+h7PMympGxPBVTerHs/MZMb3AeiSonmC/AhZpBzGVtJU0JxqfFh9pZBRJW+bfs2H2YSvIBdbAV9nsZTclyr6WSX+SWdlFrwoyhTOZaAJ3GIb0oaQhxq+0jp/APOr/Vuc78oeHfRZZiciUWga9JVjEKKIp0fzdrmfX+xSG2YffbfHZ+WTXu4F1szwPRidnTVmSNM6CEGnfCijhnAosDycKvK2lIudLzIiYR5VBv8TsPCOIosSjrEN2EgTOqvMntcjOcwmsPgyz5QkxgK5HDCHGUWc2sjQE6mzcF4EvsMbt8ql1oL7SLLZXHDo5baoJs+GdnX+B1WiAkYvQZ9kyZlVzSGCJSeTfrP8j49AysMACtJ7Aio7CVjWL+lWU5eg6WQhiyhHGheeGBdYr7GFbmXaQNMW2YLLaQ8wh/9XXkBkmF1gPtGhzN+sQOXjSHhqcsin5Kuoi2PFXs+4osgosODdswcZyx2pX1kFHXQrLBDuvfrwjEVFgJV6Z+gGL/IfNMhEzTDmxiWgXFlTDWeZks+jo/gKry4YzSxSCRdoRZStiRlRLEoOsRtE4q1r5ZB3IZFrz9q/B6l8MiXY+0oZsR5J2nq6vOn6ruTP/pg8sCqwTzg2tdllGnF3AE1Ot7xqWO5RiyRpkyyQqa+i6PYDox1nR4JdsSE6c/FjW91hwbS2Z1Vy7+cNsWGB9wzcSev2aZFZzsgxcCYuWFcRQ8lfk4zYA7TulBVaTDa1QUh+JHDqZVppHpDGU9UhLKZEc0ixD21Hs/wuwiBE2a2SzlmUqMc76JXvfaL2Hzw0JHAKDrlvTa0Gw9w3Bsl+hs5aCshJN1jKcNon8lp1nKxv6+4YF1sQ6EDhUPkQtH0oMZyWAFebc1zSbH54b2smT6SOfRuBb7crOg9bXhrM+CqN+kBVqWnT0OdSctEyirD7b1ALrgY5hmLYONvus1oQ2fMiJWz9GHd5DPqvAarIh7RgJMNE4yzjrx0grSesijZq2aAqs539vMQTrrK+j2GxpuwYRk49uatbZtww/7YtOHwGWrQ2jHaWsQn0mC7Idh2pLSlQzDdS1YYE1qA0jTYmcd1ZbiImkSTbrEmOzlcT9fjyRJlp/NFjULSCHTE6cdtwyhyKAasWV5/XpTrbApRaPDUcSdrIi1pSSJg/DMMuss5w9gZLtgxFzKAJGzv4wswqswbaQ1pAzNjS/30MMy9Ry7WfaiJll49OY9ZFgUaxTlR89n81yxLBswokYSZv8VBvSa5LWZ1mQKYyy162VORUsWixpjmWCNbFRtiJL0o+fzaIzf/brtaFlivVLBdaE1labbGfVatQoe34BvTaRAdYD6cUAAAAASUVORK5CYII=" style={{display: 'block'}} /></qrcode>
+      <small _ngcontent-c29 className="db-mediumgrey">OTP</small>
+    </div>
+  </div>
+  <div _ngcontent-c29 className="ng-tns-c29-877" fxlayout="row" style={{flexDirection: 'row', boxSizing: 'border-box', display: 'flex'}}>
+    <div _ngcontent-c29 className="db-mediumgrey" fxflex={25} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '25%'}}> FKN </div>
+    <div _ngcontent-c29 className="db-darkblue" fxflex={75} fxlayout="row" style={{flexDirection: 'row', boxSizing: 'border-box', display: 'flex', flex: '1 1 100%', maxWidth: '75%'}}>
+      <div _ngcontent-c29 className="ng-tns-c29-877" fxlayout="column" style={{flexDirection: 'column', boxSizing: 'border-box', display: 'flex'}}><span _ngcontent-c29 className="ng-tns-c29-877">100</span><small _ngcontent-c29 className="db-mediumgrey">Branch</small></div>
+      <div _ngcontent-c29 className="p-l-1" fxlayout="column" style={{flexDirection: 'column', boxSizing: 'border-box', display: 'flex'}}><span _ngcontent-c29 className="ng-tns-c29-877">1003973</span><small _ngcontent-c29 className="db-mediumgrey">Account</small>
+      </div>
+      <div _ngcontent-c29 className="p-l-1" fxlayout="column" style={{flexDirection: 'column', boxSizing: 'border-box', display: 'flex'}}><span _ngcontent-c29 className="ng-tns-c29-877">00</span><small _ngcontent-c29 className="db-mediumgrey">Sub Account</small>
+      </div>
+    </div>
+  </div>
+  <div _ngcontent-c29 className="m-t-1" fxlayout="row" style={{flexDirection: 'row', boxSizing: 'border-box', display: 'flex'}}>
+    <div _ngcontent-c29 className="db-mediumgrey" fxflex={25} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '25%'}}> PIN </div>
+    <div _ngcontent-c29 className="db-darkblue" fxflex={50} style={{flex: '1 1 100%', boxSizing: 'border-box', maxWidth: '50%'}}> 30807 </div>
+  </div><span _ngcontent-c29 className="border-h m-tb" />
+  <div _ngcontent-c29 className="z-index" fxlayout="row" fxlayoutalign="space-between center" style={{flexDirection: 'row', boxSizing: 'border-box', display: 'flex', maxHeight: '100%', placeContent: 'center space-between', alignItems: 'center'}}>
+    <div _ngcontent-c29 className="click-with-icon" fxlayoutalign="start center" ngxclipboard style={{placeContent: 'center flex-start', alignItems: 'center', flexDirection: 'row', boxSizing: 'border-box', display: 'flex'}}>
+      <small _ngcontent-c29 className="p-l-s">Copy FKN + PIN</small>
+    </div>
+  </div>
+  10010039730030807
+</div>
+
+
+  <AuthoriseStep></AuthoriseStep>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken></CreateToken>
+</step>
+  <step>
+
+  ## Create a OTP (One Time Password)
+
+  <CreateOTP></CreateOTP>
+  </step>
+  <step>
+
+  ## Patch OTP (One Time Password) response
+
+  <PatchOTPResponse></PatchOTPResponse>
+  </step>
+  <step>
+
+  ## Initiate SEPA payment
+
+  <StepInitiatePayment></StepInitiatePayment>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment></StepPayment>
+  </step>
+
+

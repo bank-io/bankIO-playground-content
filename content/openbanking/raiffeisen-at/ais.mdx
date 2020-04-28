@@ -1,0 +1,84 @@
+---
+templateKey: docs
+title: "Raiffeisen Austria Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "raiffeisen-at"
+psd2Role: "AIS"
+menus:
+  raiffeisen-at: 
+    weight: 1
+---
+
+
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepTransactions from 'components/PSD/step-transactions';
+import AccountConsentStatus from 'components/PSD/step-account-consent-status';
+import StepBalances from 'components/PSD/step-balances';
+const requestOverride = {
+  "access": {
+    "balances": [
+      {
+        "iban": "AT099900000000001511"
+      }
+    ],
+    "transactions": []
+  },
+};
+
+
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create a consent
+
+  <StepCreateAccountConsent requestOverride={requestOverride} />
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+  <step>
+
+  ## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>
+

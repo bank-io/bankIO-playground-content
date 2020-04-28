@@ -1,0 +1,113 @@
+---
+templateKey: docs
+title: "UniCredit Bank Hungary Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "unicredit-hu"
+psd2Role: "AIS"
+menus:
+  unicredit-hu:
+    weight: 1
+---
+
+import StepCreateAccountConsent from "components/PSD/step-create-account-consent";
+import AuthoriseStep from "components/PSD/step-authorise";
+import CreateToken from "components/PSD/create-token";
+import RefreshToken from "components/PSD/refresh-token";
+import StepAccounts from "components/PSD/step-accounts";
+import StepAccount from "components/PSD/step-account";
+import StepTransactions from "components/PSD/step-transactions";
+import AccountConsentStatus from "components/PSD/step-account-consent-status";
+import StepGetAccountConsent from "components/PSD/step-get-account-consent";
+import StepAccountConsentAuthorisations from "components/PSD/step-account-consent-authorisations";
+import StepAccountConsentAuthorisation from "components/PSD/step-account-consent-authorisation";
+import StepAccountConsentPostAuthorisation from "components/PSD/step-account-consent-post-authorisation";
+import StepAccountConsentPutAuthorisation from "components/PSD/step-account-consent-put-authorisation";
+import StepBalances from "components/PSD/step-balances";
+import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
+const requestOverride = {
+  access: {
+    accounts: [
+      {
+        iban: "HU47109180010000007941740002",
+      },
+    ],
+    balances: [
+      {
+        iban: "HU47109180010000007941740002",
+      },
+    ],
+    transactions: [
+      {
+        iban: "HU47109180010000007941740002",
+      },
+    ],
+  },
+};
+
+  <step>
+
+## Create a consent
+
+  <StepCreateAccountConsent requestOverride={requestOverride} />
+  </step>
+<step>
+
+## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+  <step>
+
+## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
+## Account consent authorisations
+
+  <StepAccountConsentAuthorisations/>
+  </step>
+  <step>
+
+## Account consent authorisation
+
+  <StepAccountConsentAuthorisation/>
+  </step>
+  <step>
+
+## Get account consent
+
+  <StepGetAccountConsent/>
+  </step>
+  <step>
+
+## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+## Get account transactions
+
+  <StepTransactions/>
+  </step>
+  <step>
+
+## Delete account consent
+
+  <DeleteAccountConsent/>
+  </step>

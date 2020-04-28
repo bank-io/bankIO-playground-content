@@ -1,0 +1,63 @@
+---
+templateKey: docs
+title: "Komerční banka Czech Republic Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "kb"
+psd2Role: "AIS"
+menus:
+  kb:
+    weight: 1
+---
+
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import AuthoriseStep from "components/PSD/step-authorise";
+import CreateToken from "components/PSD/create-token";
+import RefreshToken from "components/PSD/refresh-token";
+import StepAccounts from "components/PSD/step-accounts";
+import StepTransactions from "components/PSD/step-transactions";
+import StepBalances from "components/PSD/step-balances";
+
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+## Authorise consent
+
+  <AuthoriseStep/>
+  </step>
+  <step>
+
+## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+## Get account transactions
+
+  <StepTransactions/>
+  </step>
+

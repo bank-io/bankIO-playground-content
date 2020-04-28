@@ -1,0 +1,119 @@
+---
+templateKey: docs
+title: "Raiffeisen Bulgaria Account Information Service (AIS)"
+metaTitle: "This is the title tag of this page"
+metaDescription: "This is the meta description"
+aspsp: "raiffeisen-bg"
+psd2Role: "AIS"
+parameters:
+  psuID: "1000000011"
+menus:
+  raiffeisen-bg: 
+    weight: 1
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import AuthoriseStep from 'components/PSD/step-authorise';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepTransactions from 'components/PSD/step-transactions';
+import StepGetAccountConsent from 'components/PSD/step-get-account-consent';
+import AccountConsentStatus from 'components/PSD/step-account-consent-status';
+import StepBalances from 'components/PSD/step-balances';
+import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
+const requestOverride = {
+  access: {
+    accounts: [
+      {
+        iban: "BG91RZBB91551000333826",
+        currency: "BGN"
+      }
+    ],
+    balances: [
+      {
+        iban: "BG91RZBB91551000333826",
+        currency: "BGN"
+      }
+    ],
+    transactions: [
+      {
+        iban: "BG91RZBB91551000333826",
+        currency: "BGN"
+      }
+    ]
+  },
+};
+
+
+
+  <step>
+
+  ## Create a consent
+
+  <StepCreateAccountConsent requestOverride={requestOverride} />
+  </step>
+<step>
+
+  ## Authorise consent
+
+  <AuthoriseStep/>
+</step>
+<step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+</step>
+<step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Get account consent
+
+  <StepGetAccountConsent/>
+  </step>
+  <step>
+
+  ## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>
+  <step>
+
+  ## Delete account consent
+
+  <DeleteAccountConsent/>
+  </step>
+
