@@ -23,12 +23,7 @@ import StepPayment from 'components/PSD/step-payment';
 import CreateOTP from 'components/PSD/create-otp';
 import PatchOTPResponse from 'components/PSD/patch-otp-response';
 
-## How is this working?
-### Behind the scenes
-bla bla bla
 
-### Exchange token flow
-bla bla bla
 
 <step>
 

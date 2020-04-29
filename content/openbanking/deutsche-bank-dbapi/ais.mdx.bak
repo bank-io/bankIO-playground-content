@@ -19,12 +19,7 @@ import RefreshToken from 'components/PSD/refresh-token';
 import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 
-## How is this working?
-### Behind the scenes
-bla bla bla
 
-### Exchange token flow
-bla bla bla
 
 <step>
 
