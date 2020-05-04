@@ -1,8 +1,8 @@
 ---
 templateKey: docs
 title: "Deutsche Bank Payment Service (PIS)"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+metaTitle: "Deutsche Bank Payment Service (PIS)"
+metaDescription: "API playground for Deutsche Bank Payment Service (PIS)"
 aspsp: "deutsche-bank-dbapi"
 psd2Role: "PIS"
 menus:
