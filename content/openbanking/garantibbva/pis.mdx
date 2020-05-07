@@ -14,6 +14,8 @@ menus:
 
 
 
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
+import CreateClientIntent from 'components/PSD/create-client-intent';
 import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
 import AuthoriseStep from 'components/PSD/step-authorise';
 import CreateToken from 'components/PSD/create-token';
@@ -23,14 +25,38 @@ import StepAccount from 'components/PSD/step-account';
 import StepInitiatePayment from 'components/PSD/step-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
+import SimpleAlert from "components/SimpleAlert";
+const requestOverride = {
+  debtorAccount: {
+    "iban": "RO44UGBI0000012034312RON"
+  }
+};
 
 
+<SimpleAlert color="warning">
+  <span>
+    <b>Warning! -</b> Before your application can access the APIs, it must obtain a new access token for each request. The access token can be used only one time.
+  </span>
+</SimpleAlert>
+<br/>
 
+  <step>
+
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
+  <step>
+
+  ## Create an intent
+
+  <CreateClientIntent />
+  </step>
   <step>
 
   ## Create a consent
 
-  <StepInitiatePayment/>
+  <StepInitiatePayment requestOverride={requestOverride} />
   </step>
 <step>
 

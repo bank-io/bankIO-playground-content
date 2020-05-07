@@ -12,6 +12,7 @@ menus:
 
 
 
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
 import CreateClientIntent from 'components/PSD/create-client-intent';
 import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
 import AuthoriseStep from 'components/PSD/step-authorise';
@@ -19,14 +20,28 @@ import CreateToken from 'components/PSD/create-token';
 import RefreshToken from 'components/PSD/refresh-token';
 import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
+import StepBalances from 'components/PSD/step-balances';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
+import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
+import SimpleAlert from "components/SimpleAlert";
 const requestOverride = {
           };
 
 
+<SimpleAlert color="warning">
+  <span>
+    <b>Warning! -</b> Before your application can access the APIs, it must obtain a new access token for each request. The access token can be used only one time.
+  </span>
+</SimpleAlert>
+<br/>
 
+  <step>
 
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
   <step>
 
   ## Create an intent
@@ -38,24 +53,6 @@ const requestOverride = {
   ## Create a consent
 
   <StepCreateAccountConsent requestOverride={requestOverride} />
-  </step>
-<step>
-
-  ## Authorise consent
-
-  <AuthoriseStep/>
-</step>
-<step>
-
-  ## Exchange Token from Code
-
-  <CreateToken/>
-</step>
-<step>
-
-  ## Refresh token
-
-  <RefreshToken/>
   </step>
   <step>
 
@@ -77,8 +74,20 @@ const requestOverride = {
   </step>
   <step>
 
+  ## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
   ## Get account transactions
 
   <StepTransactions/>
+  </step>
+  <step>
+
+  ## Delete account consent
+
+  <DeleteAccountConsent/>
   </step>
 
