@@ -6,7 +6,7 @@ metaDescription: "API playground for Piraeus Bank Account Information Service (A
 aspsp: "piraeusbank"
 psd2Role: "AIS"
 parameters:
-  psuID: "31125453913"
+  scaAuthenticationData: "3288000"
 menus:
   piraeusbank:
     weight: 1
@@ -16,6 +16,9 @@ import StepCreateAccountConsent from "components/PSD/step-create-account-consent
 import AuthoriseStep from "components/PSD/step-authorise";
 import CreateToken from "components/PSD/create-token";
 import RefreshToken from "components/PSD/refresh-token";
+import StepAccountConsentAuthorisation from 'components/PSD/step-account-consent-authorisation';
+import StepAccountConsentPostAuthorisation from 'components/PSD/step-account-consent-post-authorisation';
+import StepAccountConsentPutAuthorisation from 'components/PSD/step-account-consent-put-authorisation';
 import StepAccounts from "components/PSD/step-accounts";
 import StepAccount from "components/PSD/step-account";
 import StepBalances from "components/PSD/step-balances";
@@ -68,6 +71,25 @@ const requestOverride = {
 ## Create a consent
 
   <StepCreateAccountConsent requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## Account consent post authorisation
+
+  <StepAccountConsentPostAuthorisation/>
+  </step>
+  <step>
+
+  ## Account consent authorisation
+
+  <StepAccountConsentAuthorisation/>
+  </step>
+  <step>
+
+  ## Update Authorisation Sub-Resource
+  Update an authorisation sub-resource and finish the authorisation process.
+
+  <StepAccountConsentPutAuthorisation/>
   </step>
   <step>
 

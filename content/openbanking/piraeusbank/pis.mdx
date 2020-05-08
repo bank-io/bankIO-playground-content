@@ -7,61 +7,95 @@ aspsp: "piraeusbank"
 psd2Role: "PIS"
 parameters:
   paymentType: sepa-credit-transfers
-  psuID: "31125453913"
+  scaAuthenticationData: "3288000"
 menus:
-  piraeusbank: 
+  piraeusbank:
     weight: 2
 ---
 
-
-
-import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
-import AuthoriseStep from 'components/PSD/step-authorise';
-import CreateToken from 'components/PSD/create-token';
-import RefreshToken from 'components/PSD/refresh-token';
-import StepAccounts from 'components/PSD/step-accounts';
-import StepAccount from 'components/PSD/step-account';
-import StepInitiatePayment from 'components/PSD/step-initiate-payment';
-import StepPayment from 'components/PSD/step-payment';
-import StepPaymentStatus from 'components/PSD/step-payment-status';
+import StepCreateAccountConsent from "components/PSD/step-create-account-consent";
+import AuthoriseStep from "components/PSD/step-authorise";
+import CreateToken from "components/PSD/create-token";
+import RefreshToken from "components/PSD/refresh-token";
+import StepAccounts from "components/PSD/step-accounts";
+import StepAccount from "components/PSD/step-account";
+import StepInitiatePayment from "components/PSD/step-initiate-payment";
+import StepPayment from "components/PSD/step-payment";
+import StepPaymentStatus from "components/PSD/step-payment-status";
+import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
+import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
+import StepPaymentPutAuthorisation from 'components/PSD/step-payment-put-authorisation';
 const requestOverride = {
-  debtorAccount: {
-    "iban": "NO4412032202452"
+  creditorAccount: {
+    iban: "GR9202600260000000000299650",
   },
-  creditorAgent: "COBADEFF",
-  creditorAddress: {
-      streetName: 'Fleet Street',
-      buildingNumber: '61A',
-      townName: 'London',
-      postCode: 'EC4Y1',
-      country: 'GB'
-    },
+  debtorAccount: {
+    iban: "GR2801718220007022123123123",
+  },
+  "remittanceInformationUnstructured": "{\r\n  \"comments\": \"invoice 12345\"\r\n}"
 };
 
+<!-- GR9202600260000000000299650 -->
 
+<!-- {
+   "endToEndIdentification":"123",
+   "debtorAccount":{
+      "iban":"GR2801718220007022123123123",
+      "currency":"EUR"
+   },
+   "instructedAmount":{
+      "currency":"EUR",
+      "amount":123
+   },
+   "creditorAccount":{
+      "iban":"GR2801718220007022123123123",
+      "currency":"EUR"
+   },
+   "creditorName":"Creditor Name",
+   "creditorAddress":{
+      "street":"rue blue",
+      "buildingnNumber":"89",
+      "city":"Paris",
+      "postalCode":"75000",
+      "country":"FR"
+   },
+   "remittanceInformationUnstructured":"Ref Number Merchant"
+} -->
 
   <step>
 
-  ## Create a consent
-
-  <StepInitiatePayment requestOverride={requestOverride} />
-  </step>
-  <step>
-
-  ## Authorise consent
+## Authorise consent
 
   <AuthoriseStep/>
   </step>
   <step>
 
-  ## Payment
+## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+## Create a consent
+
+  <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+## Payment
 
   <StepPayment/>
   </step>
   <step>
 
-  ## Payment status
+## Payment status
 
   <StepPaymentStatus/>
   </step>
@@ -72,4 +106,22 @@ const requestOverride = {
 
   <StepPaymentPostAuthorisation/>
   </step>
+  <step>
 
+  ## Payment authorisations
+
+  <StepPaymentAuthorisations/>
+  </step>
+  <step>
+
+  ## Payment authorisation
+
+  <StepPaymentAuthorisation/>
+  </step>
+  <step>
+
+  ## Update Authorisation Sub-Resource
+  Update an authorisation sub-resource and finish the authorisation process.
+
+  <StepPaymentPutAuthorisation/>
+  </step>
