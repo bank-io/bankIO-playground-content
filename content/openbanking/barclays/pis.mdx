@@ -5,6 +5,8 @@ metaTitle: "Barclays Payment Service (PIS)"
 metaDescription: "API playground for Barclays Payment Service (PIS)"
 aspsp: "barclays"
 psd2Role: "PIS"
+parameters:
+  paymentType: domestic
 menus:
   barclays: 
     weight: 2
@@ -21,6 +23,10 @@ import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import StepInitiateOpenBankingPayment from 'components/PSD/step-ob-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
+import StepGetPaymentConsent from 'components/PSD/step-get-payment-consent';
+import StepGetPaymentConsentFundsConfirmation from 'components/PSD/step-get-payment-consent-funds-confirmation';
+import AuthoriseOpenBankingStep from 'components/PSD/step-ob-authorise';
+import StepSubmitOpenBankingPayment from 'components/PSD/step-ob-submit-payment';
 
   <step>
 
@@ -33,4 +39,40 @@ import StepPayment from 'components/PSD/step-payment';
   ## Create a consent
 
   <StepInitiateOpenBankingPayment/>
+  </step>
+  <step>
+
+  ## Authorise consent
+
+  <AuthoriseOpenBankingStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  </step>
+  <step>
+
+  ## Get payment consent
+
+  <StepGetPaymentConsent/>
+  </step>
+  <step>
+
+  ## Get payment consent funds confirmation
+
+  <StepGetPaymentConsentFundsConfirmation/>
+  </step>
+  <step>
+
+  ## Submit payment
+
+  <StepSubmitOpenBankingPayment/>
+  </step>
+  <step>
+
+  ## Payment
+
+  <StepPayment/>
   </step>
