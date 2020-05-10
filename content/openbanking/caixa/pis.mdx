@@ -22,11 +22,20 @@ import RefreshToken from 'components/PSD/refresh-token';
 import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import StepInitiatePayment from 'components/PSD/step-initiate-payment';
+import SCAStep from 'components/PSD/step-sca';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
+import SimpleAlert from "components/SimpleAlert";
 const requestOverride = {
+  creditorAddress: {
+    streetName: 'Fleet Street',
+    buildingNumber: '61A',
+    townName: 'London',
+    postCode: 'EC4Y1',
+    country: 'GB'
+  },
   debtorAccount: {
-    "iban": "ES7520381001366000005858","currency":"EUR"
+    "iban": "ES2721000001087200094600","currency":"EUR"
   },
   creditorAccount: {
     "iban": "ES5720381001396035272034","currency":"EUR"
@@ -34,7 +43,12 @@ const requestOverride = {
 };
 
 
-
+<SimpleAlert color="warning">
+  <span>
+    <b>Warning! -</b> Maximum 5 characters creditorAddress postalCode allowed.
+  </span>
+</SimpleAlert>
+<br/>
   <step>
 
   ## Authorise consent
@@ -58,6 +72,12 @@ const requestOverride = {
   ## Create a consent
 
   <StepInitiatePayment requestOverride={requestOverride} />
+  </step>
+  <step>
+
+  ## SCA redirect
+
+  <SCAStep/>
   </step>
   <step>
 

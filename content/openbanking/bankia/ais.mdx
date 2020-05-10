@@ -16,18 +16,34 @@ import StepCreateAccountConsent from 'components/PSD/step-create-account-consent
 import AuthoriseStep from 'components/PSD/step-authorise';
 import CreateToken from 'components/PSD/create-token';
 import RefreshToken from 'components/PSD/refresh-token';
+import SCAStep from 'components/PSD/step-sca';
 import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
+import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 const requestOverride = {
-    "access": {
-        "availableAccounts": "allAccounts"
-    },
-    "recurringIndicator": false,
-    "validUntil": "2020-03-24",
-    "combinedServiceIndicator": false,
-    "frequencyPerDay": 1
+  "access": {
+    "accounts": [
+      {
+        "iban": "ES7520381001366000005858",
+      }
+    ],
+    "balances": [
+      {
+        "iban": "ES7520381001366000005858",
+      }
+    ],
+    "transactions": [
+      {
+        "iban": "ES7520381001366000005858",
+      }
+    ],
+    // "availableAccounts": "allAccounts",
+    // "allPsd2": "allAccounts"
+  },
+  "recurringIndicator": false,
+  "frequencyPerDay": 1
 };
 
 
@@ -59,6 +75,12 @@ const requestOverride = {
   </step>
   <step>
 
+  ## SCA redirect
+
+  <SCAStep/>
+  </step>
+  <step>
+
   ## Retrieve accounts consent status
 
   <AccountConsentStatus/>
@@ -80,5 +102,11 @@ const requestOverride = {
   ## Get account transactions
 
   <StepTransactions/>
+  </step>
+  <step>
+
+  ## Delete account consent
+
+  <DeleteAccountConsent/>
   </step>
 
