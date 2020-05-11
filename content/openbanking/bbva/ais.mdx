@@ -22,32 +22,7 @@ import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
-const requestOverride = {
-  "access": {
-    "accounts": [
-      {
-        "iban": "ES2501822200160201933547",
-        // "currency": "EUR"
-      }
-    ],
-    "balances": [
-      {
-        "iban": "ES2501822200160201933547",
-        // "currency": "EUR"
-      }
-    ],
-    "transactions": [
-      {
-        "iban": "ES2501822200160201933547",
-        // "currency": "EUR"
-      }
-    ],
-    // "availableAccounts": "allAccounts",
-    // "allPsd2": "allAccounts"
-  },
-  "recurringIndicator": false,
-  "frequencyPerDay": 1
-};
+import requestOverride from './aisp-consent-override.json';
 
 
 

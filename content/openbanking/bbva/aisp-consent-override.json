@@ -1,0 +1,21 @@
+{
+    "access": {
+      "accounts": [
+        {
+          "iban": "ES2501822200160201933547"
+        }
+      ],
+      "balances": [
+        {
+          "iban": "ES2501822200160201933547"
+        }
+      ],
+      "transactions": [
+        {
+          "iban": "ES2501822200160201933547"
+        }
+      ]
+    },
+    "recurringIndicator": false,
+    "frequencyPerDay": 1
+  }
