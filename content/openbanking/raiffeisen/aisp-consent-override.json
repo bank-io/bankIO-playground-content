@@ -1,0 +1,22 @@
+{
+   "access":{
+      "accounts":[
+         {
+            "iban":"RO31RZBR0000069999999980",
+            "currency":"RON"
+         }
+      ],
+      "balances":[
+         {
+            "iban":"RO31RZBR0000069999999980",
+            "currency":"RON"
+         }
+      ],
+      "transactions":[
+         {
+            "iban":"RO31RZBR0000069999999980",
+            "currency":"RON"
+         }
+      ]
+   }
+}

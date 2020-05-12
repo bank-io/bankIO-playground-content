@@ -23,28 +23,7 @@ import StepAccount from 'components/PSD/step-account';
 import StepTransactions from 'components/PSD/step-transactions';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepBalances from 'components/PSD/step-balances';
-const requestOverride = {
-  access: {
-    accounts: [
-      {
-        iban: "RO31RZBR0000069999999980",
-        currency: "RON"
-      }
-    ],
-    balances: [
-      {
-        iban: "RO31RZBR0000069999999980",
-        currency: "RON"
-      }
-    ],
-    transactions: [
-      {
-        iban: "RO31RZBR0000069999999980",
-        currency: "RON"
-      }
-    ]
-  },
-};
+import raiffeisenRORequestOverride from './aisp-consent-override.json';
 
 
 
@@ -52,7 +31,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={raiffeisenRORequestOverride} />
   </step>
 <step>
 
