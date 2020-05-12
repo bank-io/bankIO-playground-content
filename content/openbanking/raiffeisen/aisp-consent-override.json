@@ -2,20 +2,62 @@
    "access":{
       "accounts":[
          {
-            "iban":"RO31RZBR0000069999999980",
-            "currency":"RON"
+            "iban":"RO31RZBR0000069999999980"
+         },
+         {
+            "iban":"RO44RZBR0000069999999940"
+         },
+         {
+            "iban":"RO02RZBR0000069999999920"
+         },
+         {
+            "iban":"RO23RZBR0000069999999930"
+         },
+         {
+            "iban":"RO10RZBR0000069999999970"
+         },
+         {
+            "iban":"RO65RZBR0000069999999950"
          }
       ],
       "balances":[
          {
-            "iban":"RO31RZBR0000069999999980",
-            "currency":"RON"
+            "iban":"RO31RZBR0000069999999980"
+         },
+         {
+            "iban":"RO44RZBR0000069999999940"
+         },
+         {
+            "iban":"RO02RZBR0000069999999920"
+         },
+         {
+            "iban":"RO23RZBR0000069999999930"
+         },
+         {
+            "iban":"RO10RZBR0000069999999970"
+         },
+         {
+            "iban":"RO65RZBR0000069999999950"
          }
       ],
       "transactions":[
          {
-            "iban":"RO31RZBR0000069999999980",
-            "currency":"RON"
+            "iban":"RO31RZBR0000069999999980"
+         },
+         {
+            "iban":"RO44RZBR0000069999999940"
+         },
+         {
+            "iban":"RO02RZBR0000069999999920"
+         },
+         {
+            "iban":"RO23RZBR0000069999999930"
+         },
+         {
+            "iban":"RO10RZBR0000069999999970"
+         },
+         {
+            "iban":"RO65RZBR0000069999999950"
          }
       ]
    }
