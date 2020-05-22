@@ -3,7 +3,7 @@ templateKey: docs
 title: "Deutsche Bank Account Information Service (AIS)"
 metaTitle: "Deutsche Bank Account Information Service (AIS)"
 metaDescription: "API playground for Deutsche Bank Account Information Service (AIS)"
-aspsp: "deutsche-bank-dbapi"
+aspsp: "deutsche-bank-dbapi-sandbox"
 psd2Role: "AIS"
 menus:
   deutsche-bank-dbapi: 

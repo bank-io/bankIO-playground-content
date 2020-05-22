@@ -1,0 +1,18 @@
+[
+  {
+    "description": "Created for a \"received\" consent",
+    "consentId": "800000022"
+  },
+  {
+    "description": "Created for an \"expired\" consent",
+    "consentId": "700000011"
+  },
+  {
+    "description": "Created for a \"valid\" consent with empty arrays",
+    "consentId": "600000033"
+  },
+  {
+    "description": "Created for a \"valid\" consent with all psd2",
+    "consentId": "500000044"
+  }
+ ]
