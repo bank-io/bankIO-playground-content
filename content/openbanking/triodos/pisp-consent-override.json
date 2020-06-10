@@ -1,0 +1,8 @@
+{
+    "debtorAccount": {
+        "iban": "NL36TRIO0379501317"
+    },
+    "creditorAccount": {
+        "iban": "NL02ABNA0123456789"
+    }
+}

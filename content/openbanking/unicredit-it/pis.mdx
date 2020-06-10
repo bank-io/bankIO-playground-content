@@ -25,11 +25,7 @@ import StepPaymentStatus from 'components/PSD/step-payment-status';
 import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
 import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "IT18L0200811770000019486580"
-  }
-};
+import unicreditItPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -37,7 +33,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={unicreditItPISPRequestOverride} />
   </step>
 <step>
 

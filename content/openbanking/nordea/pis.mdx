@@ -24,11 +24,7 @@ import StepInitiatePayment from 'components/PSD/step-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
 import StepPaymentConfirmation from 'components/PSD/step-payment-confirmation';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "FI7473834510057469","currency":"EUR"
-  }
-};
+import nordeaPISPRequestOverride from './pisp-consent-override.json'
 
   <step>
 
@@ -53,7 +49,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={nordeaPISPRequestOverride} />
   </step>
   <step>
 

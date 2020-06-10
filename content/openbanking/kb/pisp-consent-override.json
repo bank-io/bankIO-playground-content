@@ -1,0 +1,32 @@
+{
+    "instructionIdentification": "NOTPROVIDED",
+    "debtorName": "Meno Priezvisko",
+    "debtorAccount": {
+        "iban": "CZ1101000900930763990217",
+        "currency": "CZK"
+    },
+    "creditorName": "Meno Priezvisko",
+    "creditorAccount": {
+        "iban": "CZ3203000000000001111132",
+        "currency": "CZK"
+    },
+    "instructedAmount": {
+        "currency": "CZK",
+        "amount": "10.00"
+    },
+    "requestedExecutionDate": "2018-09-25",
+    "remittanceInformationStructured": {
+        "reference": "VS:123"
+    },
+    "remittanceInformationStructuredArray": [
+        {
+            "reference": "VS:123"
+        },
+        {
+            "reference": "SS:456"
+        },
+        {
+            "reference": "KS:7777"
+        }
+    ]
+}

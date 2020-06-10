@@ -26,11 +26,7 @@ import StepInitiatePayment from 'components/PSD/step-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
 import SimpleAlert from "components/SimpleAlert";
-const requestOverride = {
-  debtorAccount: {
-    "iban": "RO44UGBI0000012034312RON"
-  }
-};
+import garantibbvaPISPRequestOverride from './pisp-consent-override.json'
 
 
 <SimpleAlert color="warning">
@@ -56,7 +52,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={garantibbvaPISPRequestOverride} />
   </step>
 <step>
 

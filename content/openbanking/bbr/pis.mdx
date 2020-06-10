@@ -28,19 +28,7 @@ import StepPaymentStatus from 'components/PSD/step-payment-status';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
 import PaymentMockData from 'components/PSD/payment-mock-data';
 import bbrPISScenarios from './pisScenarios.json';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "NO4412032202452"
-  },
-  creditorAgent: "COBADEFF",
-  creditorAddress: {
-      streetName: 'Fleet Street',
-      buildingNumber: '61A',
-      townName: 'London',
-      postCode: 'EC4Y1',
-      country: 'GB'
-    },
-};
+import bbrPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -54,7 +42,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={bbrPISPRequestOverride} />
   </step>
   <step>
 

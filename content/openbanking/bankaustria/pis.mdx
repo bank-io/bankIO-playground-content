@@ -26,11 +26,7 @@ import StepPaymentStatus from 'components/PSD/step-payment-status';
 import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
 import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "AT231200056789012345"
-  }
-};
+import bankaustriaPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -38,7 +34,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={bankaustriaPISPRequestOverride} />
   </step>
 <step>
 

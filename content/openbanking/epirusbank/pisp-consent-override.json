@@ -1,0 +1,13 @@
+{
+    "debtorAccount": {
+        "iban": "DE11760365688833114935",
+        "currency": "EUR"
+    },
+    "creditorAddress": {
+        "streetName": "Fleet Street",
+        "buildingNumber": "61A",
+        "townName": "London",
+        "postCode": "EC4Y1",
+        "country": "GB"
+    }
+}

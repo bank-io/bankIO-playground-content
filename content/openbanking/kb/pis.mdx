@@ -29,36 +29,7 @@ import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation'
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
 import StepPaymentPutAuthorisation from 'components/PSD/step-payment-put-authorisation';
 import StepPaymentConfirmation from 'components/PSD/step-payment-confirmation';
-const requestOverride = {
-  instructionIdentification: 'NOTPROVIDED',
-  debtorName: 'Meno Priezvisko',
-  debtorAccount: {
-    iban: "CZ1101000900930763990217",
-    currency: 'CZK',
-  },
-  creditorName: 'Meno Priezvisko',
-  creditorAccount: {
-    iban: "CZ3203000000000001111132",
-    currency: 'CZK',
-  },
-  instructedAmount: {
-    currency: 'CZK',
-    amount: '10.00'
-  },
-  "requestedExecutionDate": "2018-09-25",
-  remittanceInformationStructured: {
-    reference: 'VS:123'
-  },
-  remittanceInformationStructuredArray: [
-    {
-    reference: 'VS:123'
-  },{
-    reference: 'SS:456'
-  },{
-    reference: 'KS:7777'
-  },
-  ]
-};
+import kbPISPRequestOverride from './pisp-consent-override.json'
 
   <step>
 
@@ -70,7 +41,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={kbPISPRequestOverride} />
   </step>
   <step>
 

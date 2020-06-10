@@ -1,0 +1,10 @@
+{
+    "debtorName": "Meno Priezvisko",
+    "debtorAccount": {
+        "iban": "SK6611000000008000000402"
+    },
+    "creditorName": "Meno Priezvisko",
+    "creditorAccount": {
+        "iban": "SK6807200002891987426353"
+    }
+}

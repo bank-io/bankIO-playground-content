@@ -27,11 +27,7 @@ import StepPaymentCancellation from 'components/PSD/step-payment-cancellation';
 import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisations';
 import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
-const requestOverride = {
-  debtorAccount: {
-    iban: "BG91RZBB91551000333826"
-  }
-};
+import raiffeisenBgPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -39,7 +35,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={raiffeisenBgPISPRequestOverride} />
   </step>
 <step>
 

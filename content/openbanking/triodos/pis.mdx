@@ -26,14 +26,7 @@ import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
 import PaymentMockData from 'components/PSD/payment-mock-data';
 import triodosScenarios from './scenarios.json';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "NL36TRIO0379501317"
-  },
-  "creditorAccount": {
-      "iban": "NL02ABNA0123456789"
-  },
-};
+import triodosPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -41,7 +34,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={triodosPISPRequestOverride} />
   </step>
 <step>
 

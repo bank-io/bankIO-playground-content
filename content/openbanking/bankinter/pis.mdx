@@ -24,19 +24,7 @@ import SCAStep from 'components/PSD/step-sca';
 import StepPayment from "components/PSD/step-payment";
 import StepPaymentStatus from "components/PSD/step-payment-status";
 import SimpleAlert from "components/SimpleAlert";
-const requestOverride = {
-  creditorAddress: {
-    streetName: 'Fleet Street',
-    buildingNumber: '61A',
-    townName: 'London',
-    postCode: 'EC4Y1',
-    country: 'GB'
-  },
-  debtorAccount: {
-    iban: "ES6001280000000100000001",
-    currency: "EUR",
-  },
-};
+import bankinterPISPRequestOverride from './pisp-consent-override.json'
 
 <SimpleAlert color="warning">
   <span>
@@ -66,7 +54,7 @@ const requestOverride = {
 
 ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={bankinterPISPRequestOverride} />
   </step>
   <step>
 

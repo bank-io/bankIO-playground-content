@@ -24,11 +24,7 @@ import StepAccount from 'components/PSD/step-account';
 import StepInitiatePayment from 'components/PSD/step-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
-const requestOverride = {
-  debtorAccount: {
-    "iban": "ES2621030001350000000001","currency":"EUR"
-  }
-};
+import unicajabancoPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -54,7 +50,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={unicajabancoPISPRequestOverride} />
   </step>
   <step>
 

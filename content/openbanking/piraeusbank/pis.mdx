@@ -26,15 +26,7 @@ import StepPaymentAuthorisations from 'components/PSD/step-payment-authorisation
 import StepPaymentAuthorisation from 'components/PSD/step-payment-authorisation';
 import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-authorisation';
 import StepPaymentPutAuthorisation from 'components/PSD/step-payment-put-authorisation';
-const requestOverride = {
-  creditorAccount: {
-    iban: "GR9202600260000000000299650",
-  },
-  debtorAccount: {
-    iban: "GR2801718220007022123123123",
-  },
-  "remittanceInformationUnstructured": "{\r\n  \"comments\": \"invoice 12345\"\r\n}"
-};
+import piraeusbankPISPRequestOverride from './pisp-consent-override.json'
 
 <!-- GR9202600260000000000299650 -->
 
@@ -85,7 +77,7 @@ const requestOverride = {
 
 ## Create a consent
 
-  <StepInitiatePayment requestOverride={requestOverride} />
+  <StepInitiatePayment requestOverride={piraeusbankPISPRequestOverride} />
   </step>
   <step>
 

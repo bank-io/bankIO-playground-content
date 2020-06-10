@@ -1,0 +1,9 @@
+{
+    "creditorAccount": {
+        "iban": "GR9202600260000000000299650"
+    },
+    "debtorAccount": {
+        "iban": "GR2801718220007022123123123"
+    },
+    "remittanceInformationUnstructured": "{\r\n  \"comments\": \"invoice 12345\"\r\n}"
+}
