@@ -1,0 +1,24 @@
+{
+  "access": {
+    "accounts": [
+      {
+        "iban": "ES2621030001350000000001",
+        "currency": "EUR"
+      }
+    ],
+    "balances": [
+      {
+        "iban": "ES2621030001350000000001",
+        "currency": "EUR"
+      }
+    ],
+    "transactions": [
+      {
+        "iban": "ES2621030001350000000001",
+        "currency": "EUR"
+      }
+    ],
+    "availableAccounts": "allAccounts",
+    "allPsd2": "allAccounts"
+  }
+}

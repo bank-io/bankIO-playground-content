@@ -1,0 +1,22 @@
+{
+   "access":{
+      "accounts":[
+         {
+            "iban":"SI56290000000118391",
+            "currency":"EUR"
+         }
+      ],
+      "balances":[
+         {
+            "iban":"SI56290000000118391",
+            "currency":"EUR"
+         }
+      ],
+      "transactions":[
+         {
+            "iban":"SI56290000000118391",
+            "currency":"EUR"
+         }
+      ]
+   }
+}

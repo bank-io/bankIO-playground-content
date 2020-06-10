@@ -25,31 +25,13 @@ import StepAccountConsentPostAuthorisation from "components/PSD/step-account-con
 import StepAccountConsentPutAuthorisation from "components/PSD/step-account-consent-put-authorisation";
 import StepBalances from "components/PSD/step-balances";
 import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
-const requestOverride = {
-  access: {
-    accounts: [
-      {
-        iban: "BG26UNCR96601086186555"
-      },
-    ],
-    balances: [
-      {
-        iban: "BG26UNCR96601086186555"
-      },
-    ],
-    transactions: [
-      {
-        iban: "BG26UNCR96601086186555"
-      },
-    ],
-  },
-};
+import unicreditBGRequestOverride from './aisp-consent-override.json';
 
   <step>
 
 ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={unicreditBGRequestOverride} />
   </step>
 <step>
 

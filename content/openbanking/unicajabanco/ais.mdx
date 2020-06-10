@@ -20,30 +20,7 @@ import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
-const requestOverride = {
-  "access": {
-    "accounts": [
-      {
-        "iban": "ES2621030001350000000001",
-        "currency": "EUR"
-      }
-    ],
-    "balances": [
-      {
-        "iban": "ES2621030001350000000001",
-        "currency": "EUR"
-      }
-    ],
-    "transactions": [
-      {
-        "iban": "ES2621030001350000000001",
-        "currency": "EUR"
-      }
-    ],
-    "availableAccounts": "allAccounts",
-    "allPsd2": "allAccounts"
-  },
-};
+import unicajaRequestOverride from './aisp-consent-override.json';
 
 
 
@@ -70,7 +47,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={unicajaRequestOverride} />
   </step>
   <step>
 

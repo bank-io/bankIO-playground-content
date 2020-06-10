@@ -22,29 +22,7 @@ import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
-const requestOverride = {
-  "access": {
-    "accounts": [
-      {
-        "iban": "ES6001280000000100000001",
-      }
-    ],
-    "balances": [
-      {
-        "iban": "ES6001280000000100000001",
-      }
-    ],
-    "transactions": [
-      {
-        "iban": "ES6001280000000100000001",
-      }
-    ],
-    // "availableAccounts": "allAccounts",
-    // "allPsd2": "allAccounts"
-  },
-  // "recurringIndicator": false,
-  // "frequencyPerDay": 1
-};
+import bankinterRequestOverride from './aisp-consent-override.json';
 
 
 
@@ -71,7 +49,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={bankinterRequestOverride} />
   </step>
   <step>
 

@@ -1,0 +1,19 @@
+{
+   "access":{
+      "accounts":[
+         {
+            "iban":"BG26UNCR96601086186555"
+         }
+      ],
+      "balances":[
+         {
+            "iban":"BG26UNCR96601086186555"
+         }
+      ],
+      "transactions":[
+         {
+            "iban":"BG26UNCR96601086186555"
+         }
+      ]
+   }
+}
