@@ -25,28 +25,7 @@ import StepBalances from 'components/PSD/step-balances';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
-const requestOverride = {
-   "access": {
-    "accounts": [
-      {
-        "iban": "DE11760365688833114935",
-        "currency": "EUR"
-     }
-    ],
-    "balances": [
-     {
-        "iban": "DE11760365688833114935",
-        "currency": "EUR"
-     }
-    ],
-    "transactions": [
-      {
-        "iban": "DE11760365688833114935",
-        "currency": "EUR"
-    }
-    ]
-}
-};
+import aegeanbalticbankAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -60,7 +39,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={aegeanbalticbankAISPRequestOverride} />
   </step>
   <step>
 

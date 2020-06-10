@@ -19,9 +19,7 @@ import RefreshToken from 'components/PSD/refresh-token';
 import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import StepTransactions from 'components/PSD/step-transactions';
-const requestOverride = {
-  access: { accounts: [{ iban: "AT842099900001351824" }, { iban: "AT382099900501078513" }] },
-};
+import ersteAustriaAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -49,7 +47,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={ersteAustriaAISPRequestOverride} />
   </step>
   <step>
 

@@ -25,8 +25,7 @@ import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 import SimpleAlert from "components/SimpleAlert";
-const requestOverride = {
-          };
+import garantibbvaAISPRequestOverride from './aisp-consent-override.json'
 
 
 <SimpleAlert color="warning">
@@ -52,7 +51,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={garantibbvaAISPRequestOverride} />
   </step>
   <step>
 

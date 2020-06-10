@@ -1,0 +1,28 @@
+{
+    "access": {
+        "accounts": [
+            {
+                "iban": "RO32BACX0000000515979310"
+            },
+            {
+                "iban": "RO53BACX0000000515979320"
+            }
+        ],
+        "balances": [
+            {
+                "iban": "RO32BACX0000000515979310"
+            },
+            {
+                "iban": "RO53BACX0000000515979320"
+            }
+        ],
+        "transactions": [
+            {
+                "iban": "RO32BACX0000000515979310"
+            },
+            {
+                "iban": "RO53BACX0000000515979320"
+            }
+        ]
+    }
+}

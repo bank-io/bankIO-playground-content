@@ -25,40 +25,13 @@ import StepAccountConsentPostAuthorisation from "components/PSD/step-account-con
 import StepAccountConsentPutAuthorisation from "components/PSD/step-account-consent-put-authorisation";
 import StepBalances from "components/PSD/step-balances";
 import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
-const requestOverride = {
-  access: {
-    accounts: [
-      {
-        iban: "RO32BACX0000000515979310",
-      },
-      {
-        iban: "RO53BACX0000000515979320",
-      },
-    ],
-    balances: [
-      {
-        iban: "RO32BACX0000000515979310",
-      },
-      {
-        iban: "RO53BACX0000000515979320",
-      },
-    ],
-    transactions: [
-      {
-        iban: "RO32BACX0000000515979310",
-      },
-      {
-        iban: "RO53BACX0000000515979320",
-      },
-    ],
-  },
-};
+import atticabankAISPRequestOverride from './aisp-consent-override.json'
 
   <step>
 
 ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={atticabankAISPRequestOverride} />
   </step>
 <step>
 

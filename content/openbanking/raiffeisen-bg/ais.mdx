@@ -25,28 +25,7 @@ import StepGetAccountConsent from 'components/PSD/step-get-account-consent';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepBalances from 'components/PSD/step-balances';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
-const requestOverride = {
-  access: {
-    accounts: [
-      {
-        iban: "BG91RZBB91551000333826",
-        currency: "BGN"
-      }
-    ],
-    balances: [
-      {
-        iban: "BG91RZBB91551000333826",
-        currency: "BGN"
-      }
-    ],
-    transactions: [
-      {
-        iban: "BG91RZBB91551000333826",
-        currency: "BGN"
-      }
-    ]
-  },
-};
+import raiffeisenBgAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -54,7 +33,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={raiffeisenBgAISPRequestOverride} />
   </step>
 <step>
 

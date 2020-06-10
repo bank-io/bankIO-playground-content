@@ -25,31 +25,13 @@ import StepAccountConsentPostAuthorisation from "components/PSD/step-account-con
 import StepAccountConsentPutAuthorisation from "components/PSD/step-account-consent-put-authorisation";
 import StepBalances from "components/PSD/step-balances";
 import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
-const requestOverride = {
-  access: {
-    accounts: [
-      {
-        iban: "IT18L0200811770000019486580",
-      },
-    ],
-    balances: [
-      {
-        iban: "IT18L0200811770000019486580",
-      },
-    ],
-    transactions: [
-      {
-        iban: "IT18L0200811770000019486580",
-      },
-    ],
-  },
-};
+import buddybankAISPRequestOverride from './aisp-consent-override.json'
 
   <step>
 
 ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={buddybankAISPRequestOverride} />
   </step>
 <step>
 

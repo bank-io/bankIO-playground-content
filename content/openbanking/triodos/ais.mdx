@@ -26,25 +26,7 @@ import StepAccountConsentAuthorisation from 'components/PSD/step-account-consent
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 import StepBalances from 'components/PSD/step-balances';
 import StepTransactions from 'components/PSD/step-transactions';
-const requestOverride = {
-access: {
-            accounts: [
-              {
-                iban: "NL36TRIO0379501317"
-              }
-            ],
-            balances: [
-              {
-                iban: "NL36TRIO0379501317"
-              }
-            ],
-            transactions: [
-              {
-                iban: "NL36TRIO0379501317"
-              }
-            ]
-          },
-          };
+import triodosAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -53,7 +35,7 @@ access: {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={triodosAISPRequestOverride} />
   </step>
 <step>
 

@@ -1,0 +1,34 @@
+{
+    "access": {
+        "accounts": [
+            {
+                "iban": "GR7612345987650123456789014",
+                "bban": "002601010001XXXXX",
+                "pan": 5409050000000000,
+                "maskedPan": "123456xxxxxx1234",
+                "msisdn": "+30 170 1234567",
+                "currency": "EUR"
+            }
+        ],
+        "balances": [
+            {
+                "iban": "GR7612345987650123456789014",
+                "bban": "002601010001XXXXX",
+                "pan": 5409050000000000,
+                "maskedPan": "123456xxxxxx1234",
+                "msisdn": "+30 170 1234567",
+                "currency": "EUR"
+            }
+        ],
+        "transactions": [
+            {
+                "iban": "GR7612345987650123456789014",
+                "bban": "002601010001XXXXX",
+                "pan": 5409050000000000,
+                "maskedPan": "123456xxxxxx1234",
+                "msisdn": "+30 170 1234567",
+                "currency": "EUR"
+            }
+        ]
+    }
+}

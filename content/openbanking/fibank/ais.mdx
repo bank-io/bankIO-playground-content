@@ -26,16 +26,7 @@ import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 import AccountMockData from 'components/PSD/account-mock-data';
 import fibankAISScenarios from './aisScenarios.json';
-const requestOverride = {
-access: {
-            accounts: [
-            ],
-            balances: [
-            ],
-            transactions: [
-            ]
-          },
-          };
+import fibankAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -49,7 +40,7 @@ access: {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={fibankAISPRequestOverride} />
   </step>
   <step>
 

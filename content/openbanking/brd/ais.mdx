@@ -25,14 +25,13 @@ import StepTransactions from "components/PSD/step-transactions";
 import DeleteAccountConsent from "components/PSD/step-delete-account-consent";
 import AccountMockData from "components/PSD/account-mock-data";
 import brdAISScenarios from "./aisScenarios.json";
-const requestOverride = {
-};
+import brdAISPRequestOverride from './aisp-consent-override.json'
 
   <step>
 
 ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={brdAISPRequestOverride} />
   </step>
   <step>
 

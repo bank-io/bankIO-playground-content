@@ -1,0 +1,19 @@
+{
+    "access": {
+        "accounts": [
+            {
+                "iban": "NL36TRIO0379501317"
+            }
+        ],
+        "balances": [
+            {
+                "iban": "NL36TRIO0379501317"
+            }
+        ],
+        "transactions": [
+            {
+                "iban": "NL36TRIO0379501317"
+            }
+        ]
+    }
+}

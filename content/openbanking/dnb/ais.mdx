@@ -24,16 +24,7 @@ import StepBalances from 'components/PSD/step-balances';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
-const requestOverride = {
-access: {
-            accounts: [
-            ],
-            balances: [
-            ],
-            transactions: [
-            ]
-          },
-          };
+import dnbAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -42,7 +33,7 @@ access: {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={dnbAISPRequestOverride} />
   </step>
   <step>
 

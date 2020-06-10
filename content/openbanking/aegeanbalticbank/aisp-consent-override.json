@@ -1,0 +1,22 @@
+{
+    "access": {
+        "accounts": [
+            {
+                "iban": "DE11760365688833114935",
+                "currency": "EUR"
+            }
+        ],
+        "balances": [
+            {
+                "iban": "DE11760365688833114935",
+                "currency": "EUR"
+            }
+        ],
+        "transactions": [
+            {
+                "iban": "DE11760365688833114935",
+                "currency": "EUR"
+            }
+        ]
+    }
+}

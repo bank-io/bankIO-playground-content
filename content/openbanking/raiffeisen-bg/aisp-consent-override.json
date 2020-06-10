@@ -1,0 +1,22 @@
+{
+    "access": {
+        "accounts": [
+            {
+                "iban": "BG91RZBB91551000333826",
+                "currency": "BGN"
+            }
+        ],
+        "balances": [
+            {
+                "iban": "BG91RZBB91551000333826",
+                "currency": "BGN"
+            }
+        ],
+        "transactions": [
+            {
+                "iban": "BG91RZBB91551000333826",
+                "currency": "BGN"
+            }
+        ]
+    }
+}

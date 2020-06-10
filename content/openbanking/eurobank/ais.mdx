@@ -26,40 +26,7 @@ import StepAccountConsentAuthorisation from 'components/PSD/step-account-consent
 import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 import StepBalances from 'components/PSD/step-balances';
 import StepTransactions from 'components/PSD/step-transactions';
-const requestOverride = {
-  "access": {
-    "accounts": [
-      {
-        "iban": "GR7612345987650123456789014",
-        "bban": "002601010001XXXXX",
-        "pan": 5409050000000000,
-        "maskedPan": "123456xxxxxx1234",
-        "msisdn": "+30 170 1234567",
-        "currency": "EUR"
-      }
-    ],
-    "balances": [
-      {
-        "iban": "GR7612345987650123456789014",
-        "bban": "002601010001XXXXX",
-        "pan": 5409050000000000,
-        "maskedPan": "123456xxxxxx1234",
-        "msisdn": "+30 170 1234567",
-        "currency": "EUR"
-      }
-    ],
-    "transactions": [
-      {
-        "iban": "GR7612345987650123456789014",
-        "bban": "002601010001XXXXX",
-        "pan": 5409050000000000,
-        "maskedPan": "123456xxxxxx1234",
-        "msisdn": "+30 170 1234567",
-        "currency": "EUR"
-      }
-    ]
-  },
-          };
+import eurobankAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -68,7 +35,7 @@ const requestOverride = {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={eurobankAISPRequestOverride} />
   </step>
 <step>
 

@@ -20,42 +20,7 @@ import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
-const requestOverride = {
-access: {
-            accounts: [
-              {
-                iban: "FR7612345987650123456789014",
-                bban: "BARC12345612345678",
-                pan: "5409050000000000",
-                maskedPan: "123456xxxxxx1234",
-                msisdn: "+49 170 1234567",
-                currency: "EUR"
-              }
-            ],
-            balances: [
-              {
-                iban: "FR7612345987650123456789014",
-                bban: "BARC12345612345678",
-                pan: "5409050000000000",
-                maskedPan: "123456xxxxxx1234",
-                msisdn: "+49 170 1234567",
-                currency: "EUR"
-              }
-            ],
-            transactions: [
-              {
-                iban: "FR7612345987650123456789014",
-                bban: "BARC12345612345678",
-                pan: "5409050000000000",
-                maskedPan: "123456xxxxxx1234",
-                msisdn: "+49 170 1234567",
-                currency: "EUR"
-              }
-            ],
-            availableAccounts: "allAccounts",
-            allPsd2: "allAccounts"
-          },
-          };
+import cecAISPRequestOverride from './aisp-consent-override.json'
 
 
 
@@ -64,7 +29,7 @@ access: {
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={requestOverride} />
+  <StepCreateAccountConsent requestOverride={cecAISPRequestOverride} />
   </step>
 <step>
 
