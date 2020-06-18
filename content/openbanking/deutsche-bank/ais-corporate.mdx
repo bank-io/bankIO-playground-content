@@ -6,10 +6,12 @@ metaDescription: "API playground for Deutsche Bank Account Information Service (
 aspsp: "deutsche-bank-sandbox"
 psd2Role: "AIS"
 parameters:
-  country: DE
-  businessEntityID: "SB-DB"
-  psuID: "6154033403"
-  psuIDType: "DE_ONLB_DB"
+  country: EU
+  businessEntityID: "SB-Corporate"
+  psuID: "max.musterman05"
+  psuIDType: "WebSSO"
+  corporateID: "max.musterman_corp_05"
+  corporateIDType: "Mandate ID"
 menus:
   deutsche-bank: 
     weight: 1
@@ -31,14 +33,14 @@ import StepAccountConsentAuthorisation from 'components/PSD/step-account-consent
 import StepAccountConsentPostAuthorisation from 'components/PSD/step-account-consent-post-authorisation';
 import StepAccountConsentPutAuthorisation from 'components/PSD/step-account-consent-put-authorisation';
 import StepBalances from 'components/PSD/step-balances';
-import deutscheBankRequestOverride from './aisp-consent-override.json';
+
 
 
   <step>
 
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={deutscheBankRequestOverride} />
+  <StepCreateAccountConsent />
   </step>
 <step>
 
