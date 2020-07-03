@@ -2,20 +2,17 @@
     "access": {
         "accounts": [
             {
-                "iban": "BG91RZBB91551000333826",
-                "currency": "BGN"
+                "iban": "BG91RZBB91551000333826"
             }
         ],
         "balances": [
             {
-                "iban": "BG91RZBB91551000333826",
-                "currency": "BGN"
+                "iban": "BG91RZBB91551000333826"
             }
         ],
         "transactions": [
             {
-                "iban": "BG91RZBB91551000333826",
-                "currency": "BGN"
+                "iban": "BG91RZBB91551000333826"
             }
         ]
     }

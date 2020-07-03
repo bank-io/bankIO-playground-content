@@ -1,10 +1,19 @@
 {
     "access": {
+        "accounts": [
+            {
+                "iban": "AT099900000000001511"
+            }
+        ],
         "balances": [
             {
                 "iban": "AT099900000000001511"
             }
         ],
-        "transactions": []
+        "transactions": [
+            {
+                "iban": "AT099900000000001511"
+            }
+        ]
     }
 }
