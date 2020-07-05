@@ -16,6 +16,7 @@ import StepWallet from 'components/PSD/step-wallet';
 import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
 import AuthoriseStep from 'components/PSD/step-authorise';
 import SignPaymentStep from 'components/PSD/step-sign-payment';
+import SCAStep from 'components/PSD/step-sca';
 import CreateToken from 'components/PSD/create-token';
 import RefreshToken from 'components/PSD/refresh-token';
 import StepAccounts from 'components/PSD/step-accounts';
@@ -23,7 +24,7 @@ import StepAccount from 'components/PSD/step-account';
 import StepInitiatePayment from 'components/PSD/step-initiate-payment';
 import StepPayment from 'components/PSD/step-payment';
 import StepPaymentStatus from 'components/PSD/step-payment-status';
-
+import bcrPISPRequestOverride from './pisp-consent-override.json'
 
 
 
@@ -45,16 +46,16 @@ import StepPaymentStatus from 'components/PSD/step-payment-status';
 
   ## Create a consent
 
-  <StepInitiatePayment/>
+  <StepInitiatePayment requestOverride={bcrPISPRequestOverride} />
   </step>
-<step>
+  <step>
 
-  ## Sign payment
+  ## SCA redirect
 
   In order to successfully sign a page the user needs to enter the OTP Token for SANDBOX: 111111
 
-  <SignPaymentStep/>
-</step>
+  <SCAStep/>
+  </step>
   <step>
 
   ## Payment
