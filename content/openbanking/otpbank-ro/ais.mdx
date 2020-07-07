@@ -13,6 +13,7 @@ menus:
 
 
 import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import SCAStep from 'components/PSD/step-sca';
 import AuthoriseStep from 'components/PSD/step-authorise';
 import CreateToken from 'components/PSD/create-token';
 import RefreshToken from 'components/PSD/refresh-token';
@@ -20,34 +21,27 @@ import StepAccounts from 'components/PSD/step-accounts';
 import StepAccount from 'components/PSD/step-account';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepTransactions from 'components/PSD/step-transactions';
-import otpbankRoAISPRequestOverride from './aisp-consent-override.json'
-
-
+import AuthorizationBearer from 'components/PSD/AuthorizationBearer';
 
 
   <step>
 
+  ## Set PSU Authorization bearer
+
+  <AuthorizationBearer />
+
+  </step>
+  <step>
+
   ## Create a consent
 
-  <StepCreateAccountConsent requestOverride={otpbankRoAISPRequestOverride} />
+  <StepCreateAccountConsent/>
   </step>
-<step>
+  <step>
 
-  ## Authorise consent
+  ## SCA redirect
 
-  <AuthoriseStep/>
-</step>
-<step>
-
-  ## Exchange Token from Code
-
-  <CreateToken/>
-</step>
-<step>
-
-  ## Refresh token
-
-  <RefreshToken/>
+  <SCAStep/>
   </step>
   <step>
 
