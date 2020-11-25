@@ -28,6 +28,7 @@ import StepSubmitOpenBankingPayment from 'components/PSD/step-ob-submit-payment'
 import StepTransactions from 'components/PSD/step-transactions';
 import AccountConsentStatus from 'components/PSD/step-account-consent-status';
 import StepBalances from 'components/PSD/step-balances';
+import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 
   <step>
 
@@ -52,6 +53,12 @@ import StepBalances from 'components/PSD/step-balances';
   ## Exchange Token from Code
 
   <CreateToken/>
+  </step>
+  <step>
+
+  ## Refresh token
+
+  <RefreshToken/>
   </step>
   <step>
 
@@ -82,4 +89,10 @@ import StepBalances from 'components/PSD/step-balances';
   ## Get account transactions
 
   <StepTransactions/>
+  </step>
+  <step>
+
+  ## Delete account consent
+
+  <DeleteAccountConsent/>
   </step>
