@@ -15,6 +15,7 @@ import GradientButton from "components/GradientButton";
 import { Link } from 'components/router';
 import { navigate } from '@reach/router';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { Trans, useTranslation } from 'react-i18next';
 
 ## How is this working?
 ### Behind the scenes
@@ -33,7 +34,7 @@ The backend of the api will fill in all the required secrets and use the QWAC an
     style={{ whiteSpace: "nowrap" }}
     endIcon={<ArrowForwardIcon />}
 >
-Test users
+<Trans>Test users</Trans>
 </GradientButton>
 <br/><br/>
 
