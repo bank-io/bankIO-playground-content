@@ -26,6 +26,9 @@ import StepGetPaymentConsentFundsConfirmation from 'components/PSD/step-get-paym
 import AuthoriseOpenBankingStep from 'components/PSD/step-ob-authorise';
 import StepSubmitOpenBankingPayment from 'components/PSD/step-ob-submit-payment';
 import StepTransactions from 'components/PSD/step-transactions';
+import AccountConsentStatus from 'components/PSD/step-account-consent-status';
+import StepBalances from 'components/PSD/step-balances';
+import DeleteAccountConsent from 'components/PSD/step-delete-account-consent';
 
   <step>
 
@@ -59,6 +62,12 @@ import StepTransactions from 'components/PSD/step-transactions';
   </step>
   <step>
 
+  ## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
   ## Retrieve list of accounts
 
   <StepAccounts/>
@@ -71,7 +80,19 @@ import StepTransactions from 'components/PSD/step-transactions';
   </step>
   <step>
 
+  ## Get account balances
+
+  <StepBalances/>
+  </step>
+  <step>
+
   ## Get account transactions
 
   <StepTransactions/>
+  </step>
+  <step>
+
+  ## Delete account consent
+
+  <DeleteAccountConsent/>
   </step>
