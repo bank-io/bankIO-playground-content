@@ -7,12 +7,15 @@ aspsp: "abnamro-sandbox"
 psd2Role: "PIS"
 parameters:
   paymentType: sepa-credit-transfers
+  bank: NLAA01
+  businessEntityID: "NLAA01"
 menus:
   abnamro: 
     weight: 2
 ---
 
 
+import CreateClientCredentialsToken from 'components/PSD/create-client-credentials-token';
 import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
 import AuthoriseStep from 'components/PSD/step-authorise';
 import CreateToken from 'components/PSD/create-token';
@@ -28,7 +31,12 @@ import StepPaymentPostAuthorisation from 'components/PSD/step-payment-post-autho
 import abnamroPISPRequestOverride from './pisp-consent-override.json'
 
 
+  <step>
 
+  ## Authenticate service with client credentials
+
+  <CreateClientCredentialsToken/>
+  </step>
   <step>
 
   ## Create a consent
