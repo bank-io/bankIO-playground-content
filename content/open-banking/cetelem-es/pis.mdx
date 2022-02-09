@@ -24,7 +24,6 @@ import SCAStep from 'components/PSD/step-sca';
 import StepPayment from "components/PSD/step-payment";
 import StepPaymentStatus from "components/PSD/step-payment-status";
 import SimpleAlert from "components/SimpleAlert";
-import cetelemSpainPISPRequestOverride from './pisp-consent-override.json'
 
 <SimpleAlert color="warning">
   <span>
@@ -54,7 +53,7 @@ import cetelemSpainPISPRequestOverride from './pisp-consent-override.json'
 
 ## Create a consent
 
-  <StepInitiatePayment requestOverride={cetelemSpainPISPRequestOverride} />
+  <StepInitiatePayment />
   </step>
   <step>
 
