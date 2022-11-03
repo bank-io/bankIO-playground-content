@@ -1,0 +1,77 @@
+---
+templateKey: docs
+title: "FDX Account Data Provider (DP)"
+metaTitle: "FDX Account Data Provider (DP)"
+metaDescription: "API playground for FDX Account Data Provider (DP)"
+aspsp: "fdx-sandbox"
+psd2Role: "AIS"
+menus:
+  fdx: 
+    weight: 1
+---
+
+
+
+import StepCreateAccountConsent from 'components/PSD/step-create-account-consent';
+import SCAStep from 'components/PSD/step-sca';
+import ParStep from 'components/PSD/step-par';
+import CreateToken from 'components/PSD/create-token';
+import RefreshToken from 'components/PSD/refresh-token';
+import StepAccounts from 'components/PSD/step-accounts';
+import StepAccount from 'components/PSD/step-account';
+import StepBalances from 'components/PSD/step-balances';
+import AccountConsentStatus from 'components/PSD/step-account-consent-status';
+import StepTransactions from 'components/PSD/step-transactions';
+
+
+
+  <step>
+
+  ## Push Authorization Request (PAR)
+
+  <ParStep/>
+  </step>
+  <step>
+
+  ## SCA redirect
+
+  <SCAStep/>
+  </step>
+  <step>
+
+  ## Exchange Token from Code
+
+  <CreateToken/>
+  Now, we need to turn that access code into an access token, by having our server make a request to your token endpoint
+  </step>
+  <step>
+
+  ## Refresh token
+
+  <RefreshToken/>
+  </step>
+  <step>
+
+  ## Retrieve accounts consent status
+
+  <AccountConsentStatus/>
+  </step>
+  <step>
+
+  ## Retrieve list of accounts
+
+  <StepAccounts/>
+  </step>
+  <step>
+
+  ## Get account data
+
+  <StepAccount/>
+  </step>
+  <step>
+
+  ## Get account transactions
+
+  <StepTransactions/>
+  </step>
+
